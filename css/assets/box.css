@@ -1,0 +1,22 @@
+/* box model */
+div {
+    width: 300px;
+}
+
+div {
+    border-style: dotted dashed double ridge;
+    border-bottom: ridge;
+    border-width: 5px 10px 15px 6px;
+    border-color: tomato aqua red pink;
+}
+
+div {
+    padding:  10px 20px 30px 40px;
+}
+
+div {
+    margin: 10px 20px 30px 40px;
+}
+
+/* inline element dalam satu baris*/
+/* block  element di dalam baris berbeda*/

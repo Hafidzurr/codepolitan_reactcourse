@@ -1,0 +1,21 @@
+h1,h3 {
+    background-color: aquamarine;
+    border: 2px solid;
+    width: 500px;
+    padding: 100px;
+    margin: 50px;
+    /* properti yang memungkinkan sebuah element memiliki perilaku inline dan block, secara tampilan di dalam satu baris, tetapi juga memungkinkan pengaturan padding width dan margin seperti elemen block. Sedangkan properti none untuk tidak menampilkan element */
+    display: inline-block;
+}
+
+span {
+    background-color: brown;
+    border: 2px solid;
+    /* inline tidak bisa di modif lebarnya */
+    width: 500px;
+    /* inline hanya bisa di modif pada padding secara horizontal */
+    padding: 100px;
+    /* inline hanya bisa di modif pada margin secara horizontal */ 
+    margin: 50px;
+}
+

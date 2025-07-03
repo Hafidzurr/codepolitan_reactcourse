@@ -1,0 +1,61 @@
+/* * {
+    background-color: #D1D8BE;
+} */
+
+/* descendant selector */
+/* .jokes p {
+    font-size: 13px;
+    color: red;
+} */
+
+/* direct decendant */
+.jokes > p  {
+    font-size: 13px;
+    color: red;
+}
+
+div p {
+    font-size: 13px;
+    color: red;
+}
+
+/* ajdacent selector atau element bersebelahan */
+a + button {
+    background-color: brown;
+}
+
+/* attribute selector */
+
+input[type=text] {
+    color: #AF3E3E;
+}
+
+/* Peseudo-Classes */
+
+.jokes > p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+section button:hover {
+    background-color: #191919;
+    color: whitesmoke;
+}
+
+section:nth-of-type(2n){
+    background-color: #C1D8C3;
+}
+
+/* Pseudo elements */
+
+section h3::first-letter {
+    font-size: xx-large;
+}
+
+section h3::after {
+    content: '*';
+}
+
+section h3::first-line {
+    color: #540E33;
+}

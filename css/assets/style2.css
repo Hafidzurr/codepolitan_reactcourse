@@ -1,0 +1,21 @@
+* {
+    background-color: brown;
+}
+
+h1, h2, h3 {
+    color: wheat;
+    background-color: black;
+}
+
+span {
+    color: aqua;
+}
+
+/* class boleh memiliki value yang sama, sedangkan id tidak, atribut id satu dengan lainnya tidak boleh memiliki value yang sama  */
+#list4 {
+    color: pink;
+}
+
+.mark {
+    background-color: tomato;
+}
