@@ -1,0 +1,111 @@
+shorthand operasi nilai number di dalam variabel
+    let score = 0
+        - score += 1
+            score = 1
+
+        - score++ 
+            score = 2
+
+let merupakan variabel yang dapat diubah nilai variabelnya sedangkan const sebaliknya.
+    const merupakan referensi pada saat nilainya sudah pasti dan tidak akan diubah
+
+var adalah deklarasi variabel yang digunakan js dulu sebelum adanya deklarasi variabel let dan const. Diganti karena sudah terlalu lawas dan banyak terjadi kontrofersi saat digunakan. Contohnya, ketika di deklarasikan tanpa value, var akan memunculkan pesan error, yang mana saat ini, deklarasi variabel sudah tidak perlu di definisikan dengan value terlebih dahulu.
+
+boolean 
+    tipe data yang bernilai true and false
+
+identifier 
+    deskrpitif dan tidak singkat
+    camelCase, dengan menuliskan huruf kapital di kata kedua
+    PascalCase, mendeskriptifkan dengan menulis nama variabel dengan kedua kata kapital di awal
+    snake_case, menggunakan spasi dengan underscore
+    $simbol, menggunakan simbol
+    intinya meaningfull dan mudah dipahami, bayangkan seperti menamai anak sendiri.
+
+string, tipe data primitif di js, yang mempresentasikan text dan dideklarasikan dengan membungkus text atau kata dengan tanda singlequotes atau doublequotes. Tanda tersebut tidak boleh di campur antara pembuka dan penutup, karena akan menimbulkan error
+
+double quote di dalam string, gunakan single quote untuk pembungkusnya dan sebaliknya.
+Apabila disamarataka, maka akan menyebabkan error.
+
+tipe data string memiliki nilai index, yaitu mulai dari nol. jumlah index bergantung dengan jumlah panjang karakter dari string yang diberikan.
+
+let nama = "pijuyyy"
+p i j u y y y
+0 1 2 3 4 5 6
+
+nama[1]
+'i'
+
+nama[0]
+'p'
+
+nama.length
+7
+
+nama = nama + " rahman"
+"pijuyyy rahman"
+
+nama.length
+13
+
+let namaDepan = "pijuyyy"
+let namaBelakang = "rahman"
+
+let namaLengkap = namaDepan + " " + namaBelakang
+namaLengkap
+"pijuyyy rahman"
+
+namaLengkap += 1
+namaLengkap
+"pijuyyy rahman1"
+
+method, adalah suatu aksi yang disediakan oleh javascript seperti;
+     - menghitung panjang string dengan menggunakan .length
+     - menampilkan index dari string menggunakan chartAt()
+     - dan masih banyak lagi
+
+some.method(arg)
+beberapa method menerima argument yang mengubah hasilnya. mirip seperti inputan, kita isikan di dalam tanda kurung.
+
+namaLengkap.indexOf("pijuyyy")
+
+template literals
+
+template yang digunakan dengan membungkus text dan variabel dan method yang ingin digunakan di dalam backtik `. 
+
+`Index pijuyyy dimulai dari index ke-${namaLengkap.indexOf("pijuyyy")}.`
+"Index pijuyyy dimulai dari index ke-0"
+
+null 
+nilai kosong yang sengaja ada dan perlu dibuat.
+
+undefined
+nilai yang muncul ketika kita memanggil variabel yang dibuat tapi belum ada isinya / tidak ada sama sekali.
+
+Math.Object
+
+fungsi dan properti yang berguna untuk operasi matematika, Contohnya
+
+    - Math.PI =  menampilkan angkan phi
+    - Math.abs(-123) = mengubah angka negatif menjadi positif
+    - Math.floor(5.9) = membulatkan angka ke bawah menjadi 5 
+    - Math.round(5.9) = membulatkan angka ke atas menjadi 6
+    - dan masih banyak lagi
+
+Operator Pembanding 
+ Operator yang digunakan untuk membandingkan antara dua value 
+    > lebih dari
+    < kurang dari
+    >= lebih dari sama dengan 
+    <= kurang dari sama dengan 
+    == bernilai sama dengan, hanya memeriksa persamaan nilai tapi tidak tipenya, namun dapat menyebabkan kekeliruan, karena mengabaikan tipe data dari nilai, contohnya 1 == "1" hasilnya adalah true. Padahal keduanya memiliki tipe data yang berbeda walaupun secara harfiah sama. Ini berlaku juga pada negasi.
+    != bernilai tidak sama dengan 
+    === bernilai sama dan sejenis, memeriksa dari nilai dan tipenya 
+    !== bernilai tidak sama sejenis
+
+console.log()(print value into console), alert(notifikasi), prompt(notifikasi input)
+     merupakan tools yang bermanfaat untuk eksekusi js melalui file dan menampilkan hasil eksekusi ke console/dev tools browser.
+
+if statement
+
+
