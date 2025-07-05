@@ -109,3 +109,80 @@ console.log()(print value into console), alert(notifikasi), prompt(notifikasi in
 if statement
 
 
+logical Operators
+
+&& || !
+AND OR NOT
+
+Switch
+
+Alternatif statement if jika memiliki kondisi yang sangat banyak. Terdiri dari switch(), case, break.
+
+Arrays, adalah salah satu struktur data di js, yang mana merupakan kumpulan data atau deret data yang memiliki masing masing nilai di dalam kumpulannya.
+
+di bungkus kotak atau wadah untuk diisi data data, dan di pisahkan dengan koma. Didalamnya kita dapat bisa memasukkan macam macam tipe data ataupun array itu sendiri. 
+
+contoh;
+
+let array = []
+
+array = ['kucing','anjing','kodok']
+
+ini merupakan array yang berisi deret data yang bertipe string. Dan deret data ini memiliki panjang 3 dan dimulai dari index[0], sama seperti string.
+
+Mengubah Nilai Array
+
+kita dapat mendapatkan nilai deret data yang ada di array menggunakan nilai indexnya dan mengubah data tersebut. Namun hal ini tidak dapat di makzulkan ke dalam aturan string.
+
+Method yang dimiliki array
+
+push, untuk menambahkan nilai ke dalam array dari posisi akhir array
+pop, menghapus nilai didalam array dari posisi akhir array
+shift, menghapus nilai dari posisi awal array
+unshift, menambahkan nilai dari posisi awal array
+
+Most chossen method by programmer in array  
+
+concat, menggabungkan Array
+
+includes, mencari suatu nilai di dalam array, outputnya adalah true atau false
+
+indexOf, mencari item melalui nilai Index
+
+join, membuat suatu string dari sebuah array
+
+reverse, membalikkan urutan nilai dari array
+
+slice, menyalin sebagian nilai dari array
+
+splice, menghapus atau mengubah element, terdapat 3 parameter : index berapa, tidak ada yang terganti atau ada, kalau ga ada(0) berarti disisipkan atau di mundurkan index setelahnya atau mengganti dengan nilai yang di mention(1), nilai yang ingin di sisipkan(1, 0, 'feb')
+
+sort, mengurutkan nilai pada array 
+
+
+mengubah nilai const dengan array
+
+const merupakan definisi variabel yang nilai di dalamnya tidak dapat diubah.
+
+const dengan array, array di dalam variabel const tidak akan berubah, namun yang kita bisa manipulasikan adalah nilai dalam array itu. Hal ini membuat sebuah efisiensi ruang agar yang di definisikan kedalam const tidak berubah.
+
+nested array atau multidimensi array
+
+yaitu array di dalam array.
+
+const board = [
+    [null, null, O],
+    ['X', 'O', null],
+    ['O', null, 'X']
+]
+
+Object merupakan sekumpulan properties, yaitu key-value. object di akses menggunakan custom keys.
+
+keuntungannya adalah memanipulasi data tanpa urutan.
+
+contoh objek
+const (objek)fitnessData = {
+    totalSteps(key) : (value)30000, (property 1)
+    totalMiles : 119, (property 2)
+    avgCaloriesBurn : 6000, (property 3)
+}
