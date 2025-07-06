@@ -186,3 +186,58 @@ const (objek)fitnessData = {
     totalMiles : 119, (property 2)
     avgCaloriesBurn : 6000, (property 3)
 }
+
+Perulangan
+    menjalankan hal yang sama sebanyak data atau kondisi
+
+tipe tipe Perulangan
+-for
+-while
+-for...of
+-for...in
+
+for 
+
+contoh;
+
+initial;condition;incr/decr
+for (let i = 0; i <= 10; i++) {
+    console.log(i)
+}
+
+get data from array with for loop 
+
+for(let=0;i<array.length;i++){
+    console.log(i,array[i])
+}
+
+Nested loop, perulangan for di dalam perulangan for 
+
+let str = 'LOL'
+
+for(let i=0; i<=4;i++){
+    console.log('Outer: ',i)
+    for(let j=0;i<str.length;i++){
+        console.log(j+1,str[j])
+    }
+}
+
+while
+perulangan while akan terus berjalan selama kondisi tesnya bernilai true
+
+let num = 0;
+while (n<10) {
+    console.log(num)
+    num++
+}
+
+break, untuk menghentikan perulangan, baik for ataupun while
+
+
+for...of
+
+cara cantik dan mudah untuk melakukan perulangan dengan tipe data array atau object
+
+for(variable of iterable) {
+    statement
+}

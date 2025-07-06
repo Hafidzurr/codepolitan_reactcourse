@@ -169,59 +169,263 @@
 
 // Method array
 
-let barbel = []
+// let barbel = []
 
-console.log(barbel)
+// console.log(barbel)
 
-// menambahkan nilai dengan menggunakan nilai index dari array
+// // menambahkan nilai dengan menggunakan nilai index dari array
 
-barbel[0] = 5
+// barbel[0] = 5
 
-console.log(barbel)
+// console.log(barbel)
 
-// dengan menggunakan method push, kita tidak perlu memikirkan nilai index ke berapa dari array, jadi mencegah kita untuk lupa urutan index ke berapa saat ini. Metode ini memasukkan nilai ke dalam array dari posisi akhir array.
+// // dengan menggunakan method push, kita tidak perlu memikirkan nilai index ke berapa dari array, jadi mencegah kita untuk lupa urutan index ke berapa saat ini. Metode ini memasukkan nilai ke dalam array dari posisi akhir array.
 
-barbel.push(10, 15, 20, 25)
+// barbel.push(10, 15, 20, 25)
 
-console.log(barbel)
+// console.log(barbel)
 
-// sama halnya dengan menghapus(pop) memiliki tujuan yang sama dan metode yang digunakan sama yaitu menghapus dari posisi akhir array.
+// // sama halnya dengan menghapus(pop) memiliki tujuan yang sama dan metode yang digunakan sama yaitu menghapus dari posisi akhir array.
 
-barbel.pop()
+// barbel.pop()
 
-console.log(barbel)
+// console.log(barbel)
 
-// shift, merupakan method kebalikan dari pop, yaitu menghapus nilai dari awal array.
+// // shift, merupakan method kebalikan dari pop, yaitu menghapus nilai dari awal array.
 
-barbel.shift()
+// barbel.shift()
 
-console.log(barbel)
+// console.log(barbel)
 
 // sedangkan unshift yaitu menambahkan nilai dari awal array
 
-barbel.unshift(2.5, 3, 5)
+// barbel.unshift(2.5, 3, 5)
 
-console.log(barbel.join(" "))
+// console.log(barbel.join(" "))
 
-const board = [
-    [null, null, 'O'],
-    ['X', 'O', null],
-    ['O', null, 'X'],
-];
+// const board = [
+//     [null, null, 'O'],
+//     ['X', 'O', null],
+//     ['O', null, 'X'],
+// ];
 
-console.log(board)
-console.log(board[1][0])
+// console.log(board)
+// console.log(board[1][0])
 
-// Object, dapat menyimpan semua tipe data termasuk object di dalam object sekalipun
+// // Object, dapat menyimpan semua tipe data termasuk object di dalam object sekalipun
 
-const human ={
-    name : 'pijuyy',
-    birthDate : 16-12-2002,
-    age : 22,
-    region : 'Pangkal Pinang'
+// const human ={
+//     name : 'pijuyy',
+//     birthDate : 16-12-2002,
+//     age : 22,
+//     region : 'Pangkal Pinang'
+// }
+
+// const item = {
+//     title : 'T-Shirt',
+//     price : 150000,
+//     isReady : true,
+//     size : ['s','m','l','xl'],
+//     location: {
+//         indonesia : 90,
+//         malaysi : 40
+//     }
+
+// }
+
+// console.log(human)
+// console.log(item)
+
+// memanggil data dari object
+// untuk memanggil key, jadikan key seperti memperlakukan string ['key'], namun ini kebiasaan array saat memanggil data karena menggunakan []
+// console.log(human['name'])
+
+// yang lebih efektif adalah dengan metode object yaitu menggunakan namaObject.namaKey
+
+// console.log(human.age)
+// console.log(human.region)
+
+// console.log(item.location.indonesia)
+// console.log(item.size[3])
+
+// membuat object berjalan
+
+// memanipulasi object
+
+// human['name'] = 'rahman'
+
+// console.log(human.name)
+
+// human.age = 23
+
+// console.log(human.age)
+
+// human.gender = 'pria'
+
+// console.log(human)
+
+// memanggil object di dalam array
+
+// const shoppingCart = [
+//     {
+//         product : 'film',
+//         price : 1000, 
+//         quantity : 20
+//     },
+//         {
+//         product : 'music',
+//         price : 100, 
+//         quantity : 15
+//     },
+//         {
+//         product : 'book',
+//         price : 10, 
+//         quantity : 10
+//     }
+// ]
+
+// console.log(shoppingCart[0])
+// console.log(shoppingCart[0].quantity)
+
+// // perulangan for
+
+// for(let i = 1; i <= 10; i++){
+//     console.log(i)
+// }
+
+// for(let i = 10; i >= 1; i--){
+//     console.log(i)
+// }
+
+// for(let i = 10; i <= 100000; i*=10){
+//     console.log(i)
+// }
+
+// // infinity loop
+
+// // for(let i=20; i>=0;i++){
+// //     console.log(i)
+// // }
+
+// const pokemon = ['charmender','balbasaur','squirtle' ]
+
+// for (let i = 0; i < pokemon.length;i++){
+//     console.log(i+1,pokemon[i])
+// }
+
+// // Nested Loop
+
+// const str = 'LOL'
+
+// for(let i=1; i<=4;i++){
+//     console.log('Outer: ',i)
+//     for(let j=0;j<str.length;j++){
+//         console.log('Inner: ',str[j])
+//     }
+// }
+
+// const answer = 'abcd'
+
+// for(let i = 1; i <= 5; i++){
+//     console.log(`Soal ke-${i}`)
+//     for(let j = 0; j<answer.length;j++){
+//         console.log(`${answer[j]}.Merupakan jawaban`)
+//     }
+// }
+
+// const typePokemon = [
+//     ['charmender', 'vulpix','ponyta'],
+//     ['squirtle','gyarados','horsea'],
+//     ['trecko','bulbasaur','tutwig']
+// ]
+
+// for(let i = 0 ; i<typePokemon.length;i++){
+//     console.log(`type pokemon ke-${i+1}`)
+//     const row = typePokemon[i]
+//     for(let j=0;j<row.length;j++){
+//         console.log(row[j])
+//     }
+// }
+
+// // while
+
+// let num = 0
+// while(num < 10){
+//     console.log(num)
+//     num++
+// }
+
+// const password = 'Hafidzurr1'
+
+// let guess = prompt('Masukkan password')
+// while(guess !== password){
+//     alert('Your password is wrong!')
+//     guess = prompt('Masukkan password')
+// }
+
+// alert('Your password is correct, you can access the page')
+
+// break
+
+// let input = prompt('Hey, say something!')
+
+// while (true) {
+//     input = prompt(input)
+//     if(input.toLowerCase() === 'stop') break;
+// }
+
+// alert('ok')
+
+// for(let i=0;i<10000;i++){
+//     console.log(i)
+//     if(i===100)break;
+// }
+
+// let maximumNumber = parseInt(prompt('Fill it with your lucky number'))
+
+// while(!maximumNumber) {
+//     maximumNumber = parseInt(prompt('fill it again'))
+// }
+
+// const targetNum = Math.floor(Math.random() * maximumNumber) + 1
+// console.log(targetNum)
+
+// let guess = parseInt(prompt('Fill with your choosing first'))
+// let attempts = 1
+
+// while(parseInt(guess) !== targetNum){
+//     attempts++
+//     if(guess > targetNum){
+//         guess = parseInt(prompt('Your number to high, guess again'))
+//     } else {
+//         guess = parseInt(prompt('Your number to low, guess again'))
+//     }
+// }
+
+// alert(` Congratulations you is right and the number is ${targetNum}, you already attempts ${attempts} much `)
+
+
+const pokemons = ['charmender','balbasaur','squirtle' ] 
+
+// for...of
+
+for(let pokemon of pokemons ){
+    console.log(`pokemon ${pokemon}`)
 }
 
-const item = {
+const typePokemon = [
+    ['charmender', 'vulpix','ponyta'],
+    ['squirtle','gyarados','horsea'],
+    ['trecko','bulbasaur','tutwig']
+]
+
+for( let row of typePokemon){
+    for(let pokemon of row) {
+        console.log(pokemon)
+    }
+}
+
+const items = {
     title : 'T-Shirt',
     price : 150000,
     isReady : true,
@@ -233,56 +437,8 @@ const item = {
 
 }
 
-console.log(human)
-console.log(item)
+// for...in
 
-// memanggil data dari object
-// untuk memanggil key, jadikan key seperti memperlakukan string ['key'], namun ini kebiasaan array saat memanggil data karena menggunakan []
-console.log(human['name'])
-
-// yang lebih efektif adalah dengan metode object yaitu menggunakan namaObject.namaKey
-
-console.log(human.age)
-console.log(human.region)
-
-console.log(item.location.indonesia)
-console.log(item.size[3])
-
-// membuat object berjalan
-
-// memanipulasi object
-
-human['name'] = 'rahman'
-
-console.log(human.name)
-
-human.age = 23
-
-console.log(human.age)
-
-human.gender = 'pria'
-
-console.log(human)
-
-// memanggil object di dalam array
-
-const shoppingCart = [
-    {
-        product : 'film',
-        price : 1000, 
-        quantity : 20
-    },
-        {
-        product : 'music',
-        price : 100, 
-        quantity : 15
-    },
-        {
-        product : 'book',
-        price : 10, 
-        quantity : 10
-    }
-]
-
-console.log(shoppingCart[0])
-console.log(shoppingCart[0].quantity)
+for(let item in items) {
+    console.log(`${item} : ${items[item]}`)
+}
