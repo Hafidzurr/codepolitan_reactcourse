@@ -405,40 +405,167 @@
 // alert(` Congratulations you is right and the number is ${targetNum}, you already attempts ${attempts} much `)
 
 
-const pokemons = ['charmender','balbasaur','squirtle' ] 
+// const pokemons = ['charmender','balbasaur','squirtle' ] 
 
-// for...of
+// // for...of
 
-for(let pokemon of pokemons ){
-    console.log(`pokemon ${pokemon}`)
+// for(let pokemon of pokemons ){
+//     console.log(`pokemon ${pokemon}`)
+// }
+
+// const typePokemon = [
+//     ['charmender', 'vulpix','ponyta'],
+//     ['squirtle','gyarados','horsea'],
+//     ['trecko','bulbasaur','tutwig']
+// ]
+
+// for( let row of typePokemon){
+//     for(let pokemon of row) {
+//         console.log(pokemon)
+//     }
+// }
+
+// const items = {
+//     title : 'T-Shirt',
+//     price : 150000,
+//     isReady : true,
+//     size : ['s','m','l','xl'],
+//     location: {
+//         indonesia : 90,
+//         malaysi : 40
+//     }
+
+// }
+
+// // for...in
+
+// for(let item in items) {
+//     console.log(`${item} : ${items[item]}`)
+// }
+
+// function 
+
+let lemparDadu = Math.floor(Math.random() * 6) + 1
+console.log(lemparDadu)
+
+// solution if we wanna use thats process again and again is using function
+
+function rideDice() {
+    console.log(Math.floor(Math.random() * 6) + 1)
 }
 
-const typePokemon = [
-    ['charmender', 'vulpix','ponyta'],
-    ['squirtle','gyarados','horsea'],
-    ['trecko','bulbasaur','tutwig']
-]
+rideDice()
 
-for( let row of typePokemon){
-    for(let pokemon of row) {
-        console.log(pokemon)
+
+function sing(){
+    console.log('rokok itu tidak baik')
+    console.log('rokok itu menyesatkan')
+    console.log('stop...stop...stop')
+}
+
+sing()
+
+
+function hallo(name){
+    console.log(`Hallo, ${name}`)
+}
+
+// argument have a freedom rule for fill it, but still remember what parameter do you need so
+
+hallo('Pijuyy')
+
+// multiple argument and parameter
+
+function sumIt(a,b){
+    const total = a + b
+    console.log(total)
+}
+
+sumIt(1,2)
+
+// return 
+
+function sumIt(a,b){
+    const total = a + b
+    return total
+    console.log('selesai') // after return, all the process after that will not executed.
+}
+
+// we call in terminal and we can save in variable
+let result = sumIt(1,2)
+
+function Itsum(a,b){
+    if(typeof a !== 'number' || typeof b !== 'number') {
+        return 'Bukan angka woy';
     }
+
+    return a + b;
 }
 
-const items = {
-    title : 'T-Shirt',
-    price : 150000,
-    isReady : true,
-    size : ['s','m','l','xl'],
-    location: {
-        indonesia : 90,
-        malaysi : 40
-    }
+// Scope
+// ini akan tetap charizard karena var hanya di ubah di function
+// let pokemon = 'charizard'
 
+// function poke(){
+//     pokemon = 'pikachu'
+//     console.log(pokemon)
+// }
+
+// console.log(pokemon)
+
+// tapi jika kita def function, maka var akan berubah menjadi pikachu
+// let pokemon = 'charizard'
+
+// function poke(){
+//     pokemon = 'pikachu'
+//     console.log(pokemon)
+// }
+
+// poke()
+
+// kalau ini tetap bisa, karena di def di function dan functionnya dpanggil
+
+// function poke(){
+//     let pokemon = 'pikachu'
+//     console.log(pokemon)
+// }
+
+// poke()
+
+// ini tidak bisa, karena var tidak akan bisa diakses kalau function nya tidak di panggil 
+
+
+// function poke(){
+//     let pokemon = 'pikachu'
+//     console.log(pokemon)
+// }
+
+// console.log(pokemon)
+
+// kalau ini, karena sudah di ubah di function dan function nya di panggil, jika di cetak maka akan menampilkan var yang ada di function
+
+
+// let pokemon = 'charizard'
+
+// function poke(){
+//     pokemon = 'pikachu'
+//     console.log(pokemon)
+// }
+
+// poke()
+// console.log(pokemon)
+
+// kecuali jika di def ulang di dalam function, maka hal tsb tidak berpengaruh
+
+let pokemon = 'charizard'
+
+function poke(){
+    let pokemon = 'pikachu'
+    console.log(pokemon)
 }
 
-// for...in
+poke()
+console.log(pokemon)
 
-for(let item in items) {
-    console.log(`${item} : ${items[item]}`)
-}
+
+

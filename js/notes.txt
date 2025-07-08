@@ -241,3 +241,39 @@ cara cantik dan mudah untuk melakukan perulangan dengan tipe data array atau obj
 for(variable of iterable) {
     statement
 }
+
+function 
+Potongon kode yang dapat digunakan kembali, bisa buat di awal dan digunakan nanti, potongon kode ini sering digunakan, jadi sekali deklarasi, dapat digunakan kapan pun.
+
+function namaFungsi() {
+    // lakukan proses
+}
+
+parameter dan argument adalah input yang dapat menyimpan dan dipanggil
+function greet(name(is parameter)) {
+    console.log('Hi, ${name})
+}
+
+greet('jason'(argument))
+
+multiple parameter dan argument, we can fill it with more than one
+
+function sumIt(a,b){
+    const total = a + b
+    console.log(total)
+}
+
+we still need two argument if we want to fill 2 parameter in function
+if wanna not fill the argument, you must make definition first in function, in parameter.
+
+sumIt(1,2)
+
+statement Return
+    will end the process and will get back result from point we already fill when the function called.
+
+Scope
+kalau kita definisikan sebuah variabel yang sama di dalam ruang lingkup yang berbeda, maka masing masing ruang lingkup dapat menggunakan variabel tersebut dengan value yang berbeda tanpa mengubah value dimasing masing scope atau ruang lingkup. Jadi kita memanggil variabel di dalam lingkup masing masing akan memunculkan value sesuai yang di definisikan di ruang lingkupnya masing masing.
+
+Blocked scope variabel
+
+
