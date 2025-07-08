@@ -567,5 +567,221 @@ function poke(){
 poke()
 console.log(pokemon)
 
+// Blocked scope variabel
+// let tall = 8
+
+// if(tall > 5) {
+//     let lebar = 10
+//     console.log(lebar)
+// } 
+
+// console.log(tall)
+
+// we can't like this because let and const have blocked scope, but if we define with var, we can acces the value and variabel because var have own rule or universal so we can manipulated and no blocked in scope.
+// let tinggi = 8
+
+// if(tinggi > 5) {
+//     let lebar = 10
+//     // console.log(lebar)
+// } 
+
+// console.log(lebar)
+
+// let tinggi = 8
+
+// if(tinggi > 5) {
+//     var lebar = 10
+//     // console.log(lebar)
+// } 
+
+// console.log(lebar)
+
+// lexical scope, jika di dalam function terdapat function, maka function yang di dalam harus dipanggil. 
+
+function lamarKerja(){
+    const jabatan = "programmer"
+
+    function orangDalam(){
+    let kenalan = `Orang dalam bisa masukkan ${jabatan}`
+    console.log(kenalan)
+}
+orangDalam()
+}
+
+// function expression 
+
+// this along way
+
+// function perpangkatan(nilai) {
+//     return nilai * nilai;
+// }
+
+// let hasil = perpangkatan(5)
+
+// this Function Expression way 
+
+const hasilperpangkatan = function(nilai, pembanding){
+    return nilai * pembanding;
+}
+
+console.log(hasilperpangkatan(2,5))
+
+// Use function for argument in another function 
+
+function duaKali(func){
+    func()
+    func()
+}
+
+function lemparDice() {
+    const hasil = Math.floor(Math.random()*6) + 1;
+    console.log(hasil)
+}
+
+// jadi mendeklarasikan argumen kedalam argument lain, namun hal yang perlu diperhatikan adalah argumen ketika pemanggilan func tidak perlu ditambahkan (), karena function yang dijadikan argument yang malah di jalankan, bukan function yang menggunakan function sebagai argumen yang dijalankan dan memanfaatkan function argument tersebut.
+console.log(duaKali(lemparDice))
+
+// function menghasilkan atau bernilai balik function 
+
+function resultIsFunc() {
+    const rand = Math.random()
+    if(rand > 0.1) {
+        return function(){
+            console.log('Selamat angkanya lebih besar');
+        };
+    }else {
+        return function(){
+            console.log('Maaf, mungkin bisa coba lagi')
+        };
+    }
+}
+
+// jika dijalankan maka outputnya berupa function
+console.log(resultIsFunc())
+
+// solusinya adalah menyimpan hasil atau function tsb ke dalam variabel dan di deklarasikan kembali seperti function, karena value didalamnya berupa function.
+
+let hasil = resultIsFunc()
+
+console.log(hasil())
 
 
+// Method, suatu function yang ada didalam sebuah properti. method adalah properti yang memiliki funtion di dalamnya atau Suatu func yang di def di dalam suatu objek
+
+// Ini adalah contoh function biasa
+function myFunc(){
+    console.log('Hi')
+    return 'Hello';
+}
+
+// ini contoh object dan method
+
+const myMath = { //object
+    perkalian : function(x,y){ //method
+        return x*y;
+    },
+};
+
+console.log(myFunc())
+console.log(myMath.perkalian(2,6))
+
+// this adalah keyword untuk memanggil suatu property pada object yang sama. Tujuannya adalah untuk mendapatkan nilainya
+
+// const saya = {
+//     nama : 'Pijuyy',
+//     hobi : 'Baca buku',
+//     kenalan: function(){
+//         return `Hi, saya ${this.nama} dan hobi saya adalah ${this.hobi}.`
+//     }
+// }
+
+// console.log(saya.kenalan())
+// console.log(saya.nama)
+// console.log(saya.hobi)
+
+// try and catch, sebuah pengkondisian yang digunakan untuk mengatasi error
+
+// try { // proses untuk mencoba melakukan sesuatu program atau logic  
+//     saya.kenalan();
+// } catch { // kesalahan terjadi atau error pada try akan ditangkap oleh catch dan mengirimkan pesan error. dia jug mencegah program berhenti karena error, dengan kata lain apabila ini error, maka logic atau program selanjutnya masih tetap berjalan
+//     console.log('error!!');
+// }
+
+// // saya.kenalan()
+// console.log('Tetap berjalan woy')
+
+
+function teriak(msg){
+    try {
+        console.log(msg.toUpperCase())
+    } catch(error) {
+        console.log(error)
+        console.log('Error, please put string in message')
+    }
+}
+
+console.log(teriak('ojek'))
+console.log(teriak(1212121))
+
+// map adalah suatu function yang di miliki oleh tipe data array, map salah satu function yang bisa menerima callback function. nilai baliknya adalah array baru yang sudah dimodifikasi melalaui callback function dari suatu array.
+// output dari map adalah array. memanipulasi array yang ada, lalu melakukan re group nya menjadi array kembali
+
+const angka = [1,2,3,4,5,6,7,8,9];
+
+const doubleAngka = angka.map(function(num){
+    return num * 2;
+})
+
+console.log(angka)
+console.log(doubleAngka)
+
+let animek = [
+    {
+        title : 'Naruto',
+        rating : 90
+    },
+    {
+        title : 'One Piece',
+        rating : 95
+    },
+    {
+        title : 'Kimetsu No Yaiba',
+        rating : 97
+    },
+    {
+        title : 'Dragon Ball',
+        rating : 80
+    }
+];
+
+// Penggunaan map untuk mengambil data title dari array animek
+
+const animeList = animek.map(function(anime){
+    return anime.title.toUpperCase()
+});
+
+console.log(animek)
+console.log(animeList)
+
+// forEach dapat menggunakan callback function yang berarti dapat memanggil sebuah fungsi sebanyak jumlah element yang dimiliki array.
+
+const numbering = [1,2,3,4,5,6,7,8,9]
+
+// tradisional way
+// function print(element){
+//     console.log(element)
+// }
+
+// console.log(print(angka[0]))
+// console.log(print(angka[1]))
+
+// forEach way
+// numbering.forEach(function(el){
+//     if(el % 2 === 0){
+//         console.log(el)
+//     }
+// })
+
+animek.forEach(function(anime){
+    console.log(`${anime.title} - ${anime.rating}/100`)
+})
