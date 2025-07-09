@@ -738,19 +738,23 @@ console.log(doubleAngka)
 let animek = [
     {
         title : 'Naruto',
-        rating : 90
+        rating : 90, 
+        year : 2002
     },
     {
         title : 'One Piece',
-        rating : 95
-    },
-    {
-        title : 'Kimetsu No Yaiba',
-        rating : 97
+        rating : 95,
+        year : 1990
     },
     {
         title : 'Dragon Ball',
-        rating : 80
+        rating : 80,
+        year : 1989
+    },
+    {
+        title : 'Kimetsu No Yaiba',
+        rating : 97,
+        year : 2004
     }
 ];
 
@@ -785,3 +789,171 @@ const numbering = [1,2,3,4,5,6,7,8,9]
 animek.forEach(function(anime){
     console.log(`${anime.title} - ${anime.rating}/100`)
 })
+
+//arrow function 
+
+// old way 
+function pangkat(x) {
+    return x * x;
+}
+
+const hasilnya = pangkat(5)
+console.log(hasilnya)
+
+// Arro function way
+// const perpangkatan = (x) => {
+//     return x * x;
+// }
+
+// console.log(perpangkatan(10))
+
+// kalo parameternya satu, ga papa pake tanda kurung, minusnya kamu bingung aja itu function atau bukan, tapi dua params atau lebih harus pake
+
+// const perpangkatan = x => {
+//     return x * x;
+// }
+
+// console.log(perpangkatan(10))
+
+// atau ga pake params juga bisa
+const random = () => {
+    return Math.floor(Math.random()*1000);
+}
+
+console.log(random())
+
+// return implisit dari arrow function, jika punya perintah satu baris saja, maka kita dapat mengimplisit return dengan menghapus return dan mengganti pembungkusnya menjadi()
+
+const randomBet = () => (
+    Math.floor(Math.random()*1000)
+)
+
+console.log(randomBet())
+
+// atau dapat lebih singkat lagi jika prosesnya lebih sederhana lagi yaitu seperti 
+
+const add = (a,b) => a+b
+console.log(add(7,7))
+
+// setTimeout & setInterval, yaitu merupakan callback function yang bukan berasal dari array, fungsinya untuk memberi waktu jeda dan melakukan perulang setiap waktu yang ditentukan 
+
+// setTimeout, jadi yang di bungkus oleh setTimeout akan ditampilkan setelah jangka waktu yang ditentukan, namun apabila terdapat program setelahnya yang tidak terbungkus setTimeout maka akan terlihat dijalankan lebih dulu, padahal yang setTimeout sudah di eksekusi sesuai urutan program js dijalankan yaitu dari atas kebawah, cuman saja harus menunggu sampai jeda waktu yang ditentukan, maka dari itu next programnya terlihat di eksekusi terlebih dahulu.
+
+// console.log('Hallo...')
+// setTimeout(()=> {
+//     console.log('masih disana gak?')
+// },5000)
+// console.log('saya pergi yaa...')
+
+// setInterval, melakukan proses secara berulang sesuai set waktu yang ditentukan 
+
+// const interval = setInterval(()=>{
+//     console.log(Math.random())
+// }, 2000)
+
+// cara memberhentingkannya adalah dengan memasukkan ke dalam var dulu lalu gunakan method clearInterval(dengan nama variabel atau interval yang ingin di hentingkan)
+
+// Memilih data tertentu di dalam array dengan filter method
+// filter, merupakan function yang akan mengembalikan nilai aray lagi yang sudah dimanipulasi sesuai dengan kriteria yang ditetapkan
+
+const nombor = [1,2,3,4,5,6,7,8,9]
+const ganjil = nombor.filter(n => {
+    return n % 2 === 1; // jika nilai n merupakan angka ganjil, maka
+    // callback function akan membuat array baru berisi angka-angka ganjil dari komposisi array di atas
+}) //[1,3,5,7,9]
+
+console.log(ganjil)
+
+// filter dan map dapat dipisah prosesnya
+const animeSangatBagus = animek.filter(anime => anime.rating > 80)
+const judulAnimeSangatBagus = animeSangatBagus.map((anime) => anime.title)
+
+// map dan filter dapat digabungkan juga prosesnya 
+const animeBagus = animek.filter((anime) => anime.rating <= 80).map((anime) => anime.title)
+
+
+console.log(animeSangatBagus)
+console.log(judulAnimeSangatBagus)
+console.log(animeBagus)
+
+// Menentukan benar atau salah pada array dengan Every dan Some method
+// Method Every akan mengembalikan nilai boolean. true pada saat seluruh nilai yang ada pada suatu array memiliki kriteria yang sama, dan false jika sebaliknya.
+
+const kataKata = ['kita', 'kamu', 'sayaa']
+
+const kataGasi = kataKata.every(kata => {
+    return kata.length === 4
+})
+
+console.log(kataGasi)
+
+const nilaiUjian = [80,90,100,77,89,85]
+
+const apakahLulus = nilaiUjian.every((score) => score >= 77)
+
+console.log(apakahLulus)
+
+// some, mirip dengan every, namun lebih fleksibel. hasilnya akan true jika salah isi dari array memiliki kriteria yang sama. dan akan false jika sama sekali tidak ada yang sesuai kriteria
+
+const wordWord = ['kita', 'kamu', 'saya']
+
+const wordGasi = wordWord.some(word => {
+    return word.length === 4
+})//true
+
+console.log(wordGasi)
+
+const isAnimeListNew = animek.some((anime) => anime.year >= 2000)
+console.log(isAnimeListNew)
+
+// Mendapatkan satu Nilai sesuai kondisi dari sebuah array dengan reduce.
+// reduce, melakukan proses sebanyak element milik suatu array. nilai baliknya adalah single value
+
+const subTotal = [1500, 20000, 4000, 19000, 32000]
+
+const total = subTotal.reduce((currentTotal, singleSubTotal)=> {
+    return currentTotal + singleSubTotal
+})
+
+console.log(total)
+
+// sebenernya juga bisa menggunakan perulangan for
+
+let totalitas = 0
+
+for (let scoreTotal of nilaiUjian) {
+    totalitas += scoreTotal
+}
+
+console.log(totalitas)
+
+// menggunakan metode reduce
+const totalResult = nilaiUjian.reduce((total, scoreNilai) => {
+    return total + scoreNilai;
+});
+
+console.log(totalResult)
+
+// metode reduce di array object
+
+const bestAnime = animek.reduce((bestAnime, currAnime) => {
+    console.log(bestAnime,currAnime)
+    if(currAnime.rating > bestAnime.rating) {
+        return currAnime;
+    }
+
+    return bestAnime;
+})
+
+console.log(bestAnime);
+
+// Object This di dalam arrow function mengarah pada object global window
+// scope this dapat mencari dan mengambil nilai dari suatu properti 
+// jadi jika mengakses nilai dari suatu properti menggunakan this, itu sebaiknya menggunakan regular function, karena jika menggunakan arrow function maka this akan mengarah ke atau berada di global window bukan di local, dan pada akhirnya ouput yang diberikan berupa undefined.
+
+
+
+
+
+
+
