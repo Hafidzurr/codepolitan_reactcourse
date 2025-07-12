@@ -951,6 +951,42 @@ console.log(bestAnime);
 // scope this dapat mencari dan mengambil nilai dari suatu properti 
 // jadi jika mengakses nilai dari suatu properti menggunakan this, itu sebaiknya menggunakan regular function, karena jika menggunakan arrow function maka this akan mengarah ke atau berada di global window bukan di local, dan pada akhirnya ouput yang diberikan berupa undefined.
 
+// penggunaan this dengan function regular
+
+// const humanPerson = {
+//     firstName : 'Pijuyy',
+//     lastName  : 'Rahman',
+//     fullName  : function () {
+//         return `${this.firstName} ${this.lastName}`;
+//     },
+// };
+
+// console.log(humanPerson.fullName())
+
+// jika menggunakan arrow function 
+const humanPerson = {
+    firstName : 'Pijuyy',
+    lastName  : 'Rahman',
+    fullName  : () => {
+        console.log(this) // this nya mengarah ke object window, bukan ke humanPerson
+        return `${this.firstName} ${this.lastName}`;
+    },
+
+    panggilNanti : function () {
+        setTimeout(function (){
+            console.log(this)
+            console.log(this.firstName)
+        }, 3000)
+    }
+};
+
+console.log(humanPerson.fullName()) //undefined undefined, maka disarankan menggunakan function regular, sama halnya dengan function panggilNanti, kecuali function setTimeout, dia menggunakan arrowfunction karena agar dapat mengakses this diluar fungsi, arrow function akan mewarisi this dari lingkup di mana ia di definisikan.
+
+// fullName menggunakan arrow function, yang tidak punya konteks this sendiri. 
+// Arrow function mewarisi this dari lingkup luar, yaitu global object (window di browser), sehingga this.firstName dan this.lastName adalah undefined.
+// disarankan menggunakan regular function saat membuat method dalam object, supaya this mengarah ke object (humanPerson).
+
+console.log(humanPerson.panggilNanti()) // hasilnya undefined lagi karena this mengarah ke object window
 
 
 
