@@ -277,3 +277,13 @@ kalau kita definisikan sebuah variabel yang sama di dalam ruang lingkup yang ber
 Blocked scope variabel
 
 
+default value parameter, nilai yang digunaklan saat fungsi dipanggil tapi tidak diberi nilai argument yang diperlukan
+
+spread operator pada function, mengubah suatu array atau object atau bahkan string menjadi deret parameter untuk function.
+
+Merge array dengan spread operator, yaitu menggabungkan array satu dengan lainnya dengan spread operator
+
+Merge object dengan spread operator, menggunakan metode yang sama dengan yang digunakan array. Membedakannya adalah pada penutupnya saja yaitu menggunakan kurung kurawal {}.
+
+rest param, spread operator yang digunakan untuk efisiensi penulisan parameter yang panjang.
+

@@ -989,7 +989,102 @@ console.log(humanPerson.fullName()) //undefined undefined, maka disarankan mengg
 console.log(humanPerson.panggilNanti()) // hasilnya undefined lagi karena this mengarah ke object window
 
 
+// jika tidak di masukkan parameter maka menghasilkan NaN
+function daduLempar(sisi) {
+    return Math.floor(Math.random() * sisi) + 1;
+}
 
+// maka dibutuhkan default value apabila lupa dimasukkan parameter valuenya
 
+function dicetwing( sisi = 4) {
+    return Math.floor(Math.random() * sisi) + 1
+}
 
+function sapa(name,msg) {
+    return `Hai ${name}, ${msg}`
+}
+
+// posisi default value biasanya di posisikan di belakang atau setelah parameter yang tidak memiliki default value, karena untuk mencegah error atau salah pemosisian parameter input.
+
+// contoh menyebabkan error
+function greetings(msg = 'selamat siang',name){
+    return `Hai ${name}, ${msg}`
+}
+// contoh benar
+function sapaBenar(name,msg = 'selamat siang'){
+    return `Hai ${name}, ${msg}`
+}
+
+// spread operator pada function
+const bigValue = Math.max(1,2,3,4,5)
+const minValue = Math.min(1,2,3,4,5)
+const valueNumber = [6,7,8,9,10]
+
+console.log(`Nilai terbesarnya adalah ${bigValue}`)
+console.log(`Nilai terkecilnya adalah ${minValue}`)
+// parameter yang dimasukkan harus bernilai angka
+console.log(`Nilai terbesarnya adalah ${Math.max(valueNumber)}`)
+// solusinya adalah dengan menambahkan 3 titik di awal variable (...), 
+console.log(`Nilai terbesarnya adalah ${Math.max(...valueNumber)}`)
+// hasilnya nilai dengan spasi, spread operator ini membongkar dan mengurutkan kembali dalam bentuk angka sehingga dapat dijadikan paramater.
+console.log(...valueNumber)
+
+// Merge array dengan spread operator
+
+const numberValue = [1,2,3,4,5,6,7,8,9]
+const stringValue = ['Alex', 'Pijuyy', 'Feni', 'Marsha','Felix']
+
+// metode menambahkan value kedalam array dan membuat array baru agar tidak menggangu array originalnya
+
+// spread operator digunakan untuk mengakses value array, dan metodenya dapat digunakan untuk menambahkan value baru dan merge di array baru, tanpa mengubah array ori
+const campuran = [...numberValue, 10,11,12,13]
+// posisi penulisan array mempengaruhi posisi array setelah di merge 
+const campuran1 = [...numberValue, ...stringValue]
+const campuran2 = [...stringValue, ...numberValue]
+
+console.log(numberValue)
+console.log(stringValue)
+console.log(campuran)
+console.log(campuran1)
+console.log(campuran2)
+
+// Merge object dengan spread operator
+
+const user = {
+    name: 'Pijuyy',
+    email:'pijuyy@gmail.com',
+}
+
+const credential = {
+    password : 'pjy.clip16',
+    token : 'u19381uer29048r241j1u41'
+}
+
+const userBaru = {...user, id:1,pass:'pjy.clip16'}
+const newUser = {...user, ...credential}
+
+console.log(user)
+console.log(userBaru)
+console.log(newUser)
+
+// rest param, untuk parameter yang banyak dan juga panjang
+
+// spread operator digunakan untuk mengambil semua argument yang diberikan dan meringkasnya menjadi bentuk spread operator
+const sumAll = (...nums) => {
+    return nums.reduce((total, el) => total + el) 
+};
+
+console.log(sumAll(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15))
+
+const nameValue = ['Alex', 'Pijuyy', 'Feni', 'Marsha','Felix','Gita','Ernest','Raditya']
+
+// spread operator digunakan untuk menyimpan value yang tidak dipanggil menjadi parameter, atau disebut sisa value yang tidak dipanggil sebelumnya. Atau mendapatkan value yang tidak digunakan pada proses sebelumnya seperti di contoh, karena urutan pengambilan value dari nilai pertama array.
+const winner = (gold, silver, bronze, ...sisa) => {
+    console.log(`Medali gold di dapatkan oleh: ${gold}`)
+    console.log(`Medali silver di dapatkan oleh: ${silver}`)
+    console.log(`Medali bronze di dapatkan oleh: ${bronze}`)
+    console.log(`Peserta lainnya: ${sisa}`)
+}
+
+console.log(winner(...nameValue))
 
