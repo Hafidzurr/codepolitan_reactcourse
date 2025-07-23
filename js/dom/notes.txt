@@ -1,0 +1,56 @@
+Document Object Model, sebuah reprentasi dari struktur dokumen HTML atau XML dalam bentuk tree oleh Javascript
+
+DOM memungkinkan kita untuk mengubah struktur, isi, atau still dokumen melalui kode Javascript
+
+DOM memiliki struktur hierarkis, dimana setiap elemen dokumen merupakan child node dari elemen lain atau root node(Document)
+
+js menganggap hmtl ini sebagai pohon dan ranting pohon, elemen satu dan lainnya berkaitan, kaitan tersebut atau tag elemen tersebut dianggap object oleh js, DOM memungkinkan kita untuk mengubah struktur, isi, atau still dokumen melalui kode Javascript
+
+DOM node atau titik tertinggi atau struktur tertinggi dari object hierarki yang dimiliki oleh HTML
+
+DOM bisa dibilang merupakan sudut pandang yang dimiliki js terhadap struktur HTML
+
+Document merupakan hierarki tertinggi
+Document -> body -> paragraph
+                 -> img
+                 -> ul -> li
+                       -> li
+
+
+Document merupakan entry point dari keseluruhan objek yang dimiliki oleh DOM. Memiliki seluruh reprentasi konten halaman web, dan berbagai method serta properti yang bisa dimanfaatkan.
+
+Procedure -> select -> manipulate
+
+Selecting with DOM
+
+getElementById
+    getElementById(id)
+
+    document
+    #document (http://10.79.85.29:5501/dom/selection/index.html)
+
+    document.getElementById('banner')
+    <img id=​"banner" src=​"https:​/​/​upload.wikimedia.org/​wikipedia/​commons/​thumb/​1/​15/​Cat_August_2010-4.jpg/​1920px-Cat_August_2010-4.jpg" alt>​
+
+    const banner = document.getElementById('banner')
+    undefined
+
+    console.dir(banner)
+    VM787:1 img#banneraccessKey: 
+
+    banner.src
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/1920px-Cat_August_2010-4.jpg'
+
+    document.getElementById('toc')
+    <div id=​"toc" role=​"navigation" aria-labelledby=​"mw-toc-heading">​…​</div>​
+
+    const toc = document.getElementById('toc')
+    undefined
+
+    console.dir(toc)
+    VM1028:1 div#toc
+
+getElementByTagName
+    getElementByTagName(tagname)
+    getElementByTagName('img')
+getElementByClassName

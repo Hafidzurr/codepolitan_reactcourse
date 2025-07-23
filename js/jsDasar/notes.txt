@@ -287,3 +287,5 @@ Merge object dengan spread operator, menggunakan metode yang sama dengan yang di
 
 rest param, spread operator yang digunakan untuk efisiensi penulisan parameter yang panjang.
 
+Destructing, melakukan pembongkaran atau unboxing set untuk array dan object
+

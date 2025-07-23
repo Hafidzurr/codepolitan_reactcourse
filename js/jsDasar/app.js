@@ -1079,12 +1079,63 @@ console.log(sumAll(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15))
 const nameValue = ['Alex', 'Pijuyy', 'Feni', 'Marsha','Felix','Gita','Ernest','Raditya']
 
 // spread operator digunakan untuk menyimpan value yang tidak dipanggil menjadi parameter, atau disebut sisa value yang tidak dipanggil sebelumnya. Atau mendapatkan value yang tidak digunakan pada proses sebelumnya seperti di contoh, karena urutan pengambilan value dari nilai pertama array.
-const winner = (gold, silver, bronze, ...sisa) => {
-    console.log(`Medali gold di dapatkan oleh: ${gold}`)
-    console.log(`Medali silver di dapatkan oleh: ${silver}`)
-    console.log(`Medali bronze di dapatkan oleh: ${bronze}`)
-    console.log(`Peserta lainnya: ${sisa}`)
+// const winner = (gold, silver, bronze, ...sisa) => {
+//     console.log(`Medali gold di dapatkan oleh: ${gold}`)
+//     console.log(`Medali silver di dapatkan oleh: ${silver}`)
+//     console.log(`Medali bronze di dapatkan oleh: ${bronze}`)
+//     console.log(`Peserta lainnya: ${sisa}`)
+// }
+
+// console.log(winner(...nameValue))
+
+// destructing unboxing set untuk array dan object
+
+// destructing array
+
+const [gold, sliver, bronze, ...peserta] = nameValue;
+
+console.log(gold)
+console.log(sliver)
+console.log(bronze)
+console.log(peserta)
+
+// destructing object
+
+const student =  {
+    namaPanggilan : 'Juyy',
+    emailMurid :'juyy@gmail.com', 
+    kelas : '5A'
+};
+
+const {namaPanggilan, emailMurid} = student;
+
+console.log(namaPanggilan)
+console.log(emailMurid)
+
+const {namaPanggilan: nama, emailMurid: email, phone = '081383930712'} = student;
+
+console.log(nama)
+console.log(email)
+console.log(phone)
+
+// destructing object menggunakan function
+
+const studentAndKelas = ({namaPanggilan, kelas}) => {
+    return `${namaPanggilan} dan ${kelas}`
 }
 
-console.log(winner(...nameValue))
+console.log(studentAndKelas(student))
 
+// destructing object dalam array
+
+const anim = animek.map(anim => {
+    return `${anim.title} ${anim.year} Rating ${anim.rating}`
+}) 
+
+console.log(anim)
+
+const anim2 = animek.map(({title, year, rating}) => {
+    return `${title} ${year} Rating ${rating}`
+}) 
+
+console.log(anim2)
