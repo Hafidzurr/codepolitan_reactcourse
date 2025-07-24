@@ -54,3 +54,7 @@ getElementByTagName
     getElementByTagName(tagname)
     getElementByTagName('img')
 getElementByClassName
+    getElementByClassName(classname)
+    getElementByTagName('square')
+
+querySelector is  all in one function untuk melakukan seleksi, untuk mengambil semua element, tambahkan all, querySelectorAll

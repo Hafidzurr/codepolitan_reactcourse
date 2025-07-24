@@ -13,7 +13,7 @@ for (let img of squareImages) {
 		'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAVkKWkpamXCWnQhbebtGbH_Z0HO8zzJXthA&s';
 }
 
-const links = document.querySelectorAll('a');
+const links = document.querySelectorAll('.coba a');
 
 for (let link of links) {
 	link.style.color = 'rgb(0, 108, 134)';
