@@ -19,7 +19,8 @@ Document -> body -> paragraph
 
 Document merupakan entry point dari keseluruhan objek yang dimiliki oleh DOM. Memiliki seluruh reprentasi konten halaman web, dan berbagai method serta properti yang bisa dimanfaatkan.
 
-Procedure -> select -> manipulate
+Procedure -> select            -> manipulate
+                    ->selector 
 
 Selecting with DOM
 
@@ -58,3 +59,6 @@ getElementByClassName
     getElementByTagName('square')
 
 querySelector is  all in one function untuk melakukan seleksi, untuk mengambil semua element, tambahkan all, querySelectorAll
+
+EVENT
+minindak lanjuti perintah yang diberikan atau input oleh pengguna
