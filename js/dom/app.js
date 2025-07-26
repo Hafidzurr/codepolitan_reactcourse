@@ -117,7 +117,7 @@
 //     console.log('Tombol dilepas')
 // })
 
-const form = document.querySelector('#form')
+// const form = document.querySelector('#form')
 
 // form.addEventListener('submit', function(){
 //     console.log('submited')
@@ -138,8 +138,8 @@ const form = document.querySelector('#form')
 
 // study case, take data realtime
 
-const input = document.querySelector('input')
-const list = document.querySelector('#notes')
+// const input = document.querySelector('input')
+// const list = document.querySelector('#notes')
 
 // event change akan bekerja jika kita melakukan perubah pada input dan tidak terjadi jika kita tidak mengubah value dari inputan 
 
@@ -150,20 +150,76 @@ const list = document.querySelector('#notes')
 // event input dan change berguna untuk menghindari kita memasukkan inputan tidak melalui keyboard
 
 // event input, inputan value yang bisa dimasukkan ke form atau inputan maka akan di proses kecuali selain huruf angka symbol, yaitu seperti ctrl, capslock, tab dan lainnya 
-input.addEventListener('input', (e) =>{
-    document.querySelector('h1').innerText = input.value
-    console.log('Nilai Berhasil di input')
-})
+// input.addEventListener('input', (e) =>{
+//     document.querySelector('h1').innerText = input.value
+//     console.log('Nilai Berhasil di input')
+// })
+
+// form.addEventListener('submit', function(e){
+//     e.preventDefault()
+//     const noteValue = input.value
+//     const newList = document.createElement('li')
+//     newList.innerText = noteValue
+
+//     list.append(newList)
+//     input.value = '';
+
+//     console.log(newList)
+// });
+
+
+// const button = document.querySelector('#changeColor')
+// const container = document.querySelector('#container')
+
+// button.addEventListener('click', function(e) {
+//     container.style.backgroundColor = generateRandomColor(e);
+//     // ini akan memberhentikan proses selanjutnya yaitu event yang dimiliki oleh parent dari button 
+//     e.stopPropagation()
+// })
+
+// container.addEventListener('click', function() {
+//     container.classList.toggle('hide');
+// })
+
+// const generateRandomColor = () => {
+//     const r = Math.floor(Math.random() * 255);
+//     const g = Math.floor(Math.random() * 255);
+//     const b = Math.floor(Math.random() * 255);
+
+//     return `rgb(${r}, ${g}, ${b})`;
+// };
+
+const form = document.querySelector('#form')
+const input = document.querySelector('input')
+const list = document.querySelector('#notes')
 
 form.addEventListener('submit', function(e){
-    e.preventDefault()
-    const noteValue = input.value
+    e.preventDefault();
+    const notValue = input.value;
     const newList = document.createElement('li')
-    newList.innerText = noteValue
-
+    newList.innerText = notValue;
     list.append(newList)
     input.value = '';
+})
 
-    console.log(newList)
-});
+// ini query selector ke list yang sudah ready di struktur html yang kita buat 
+// const lis = document.querySelectorAll('li')
 
+// for (let li of lis) {
+//     li.addEventListener('click', function(){
+//         li.remove()
+//     })
+// }
+
+
+
+list.addEventListener('click', (e) => {
+    // e.target.remove();
+
+    // Karena kita ngambilnya dari parent, maka semua element yang ada di dalam parentnya itu bakal terhapus, untuk mencegah dan men spesifikan element yang akan terhapus apabila di click, maka kita mengunakan pengkondisian.
+    e.target.nodeName === 'LI' && e.target.remove();
+
+    // console.dir(e.target)
+
+
+})

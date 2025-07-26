@@ -66,3 +66,15 @@ minindak lanjuti perintah yang diberikan atau input oleh pengguna'
 Inline Event, kita bisa melakukan event secara inline di struktur html, namun tidak disarankan
 
 addEventListener merupakan cara powerfull untuk menambahkan event 
+
+Event bubbling akan berjalan secara berantai, 
+
+event bubbling terjadi ketika kondisi, event, atau proses lainnya ikut di proses ketika kita melakukan proses spesifik yang kita pilih.
+Contohnya : seperti dibawah, ketika kita melakukan proses klik button, proses lainnya dari parent button  akan ikut ter proses.
+    <section onclick="alert('section click')">
+        <p onclick="alert('paragraph click')">
+            <button onclick="alert('button click')">Click</button>
+        </p>
+    </section>
+
+Event delegation, event yang mewakili suatu element yang kita kenakan eventlistener, namun yang di eksekusi event lainnya.
