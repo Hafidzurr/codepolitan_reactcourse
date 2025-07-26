@@ -61,4 +61,8 @@ getElementByClassName
 querySelector is  all in one function untuk melakukan seleksi, untuk mengambil semua element, tambahkan all, querySelectorAll
 
 EVENT
-minindak lanjuti perintah yang diberikan atau input oleh pengguna
+minindak lanjuti perintah yang diberikan atau input oleh pengguna'
+
+Inline Event, kita bisa melakukan event secara inline di struktur html, namun tidak disarankan
+
+addEventListener merupakan cara powerfull untuk menambahkan event 
