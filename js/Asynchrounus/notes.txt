@@ -1,0 +1,39 @@
+Async Await 
+
+js merupakan bahasa pemrograman non blocking, artinya dapat melakukan pekerjaan sekaligus dalam satu waktu, jadi tidak perlu harus menunggu proses sebelumnya selesai, tapi bisa bekerja berbarengan dengan proses lainnya
+
+Call Stack Mekanisme memory di javascript
+
+Call Stack Function yaitu mekanisme untuk interpreter (seperti interpreter js di browser web) untuk melacak lokasi skrip yang memanggil banyak fungsi2 yang sedang dijalankan dan fungsi apa yang dipanggil dari dalam fungsi itu, dll.
+
+call stack, mekanisme interpreter dari js untuk melihat bagaimana suatu fungsi yang ditulis dipanggil, bagaimana caranya, bagaimana flownya, dan bagaimana urutannya.
+
+input -> fifo(first in first out)
+      -> lifo(last in first out)
+
+contoh call stack dengan rumus pythagoras
+
+const perkalian = (x, y) => x * y;
+const akar = x => perkalian(x,x);
+const pythagoras = (a, b, c) => (
+    return akar(a) + akar(b) === akar(c)
+)
+
+single thread, dibaca secara sinkronus
+
+single thread adalah sebuah program yang hanya dapat menjalankan satu proses dalam satu waktu. (isinya ya proses dalam sebuah program yang akan berjalan sesuai urutan dan akan menunggu uratan dari proses tersebut selesai baru lanjut ke urutan setelahnya.)
+
+Multi thread, suatu proses dalam satu fungsi yang dikerjakan dalam satu waktu.
+
+Contoh single thread Dalam Pemrograman
+const newTask = input.value // get user input from task input
+sendToServerAndSaveIt(newTask) // maybe take a while
+input.value = '' // will process after save data
+
+Contoh penerapan multi thread
+console.log('Bakal muncul pertama')
+setTimeout (() => { // sudah masuk ke dalam memory namun calback function nya akan dijalankan setelah waktu atau parameter yang ditentukan
+    console.log('Ini udah masuk memory proses tapi dijalankan setelah 3 detik kedepan')
+}, 3000);
+console.log('Bakal muncul kedua')
+
