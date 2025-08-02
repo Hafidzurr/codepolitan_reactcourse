@@ -94,6 +94,139 @@ const requestCallback = (url, success, failure) => {
 //     console.log('error', error)
 // })
 
+// // Promise version
+// const requestPromise = (url) => {
+// 	return new Promise((resolve, reject) => {
+// 		const delay = Math.floor(Math.random() * 4500) + 500;
+// 		setTimeout(() => {
+// 			if (delay > 2000) {
+// 				reject('Error: Connection Timeout');
+// 			} else {
+// 				resolve(`Success: ${url} (${delay}ms)`);
+// 			}
+// 		}, delay);
+// 	});
+// };
+
+// console.log(requestPromise('google.com'))
+
+// // ini masih bisa berpotensi call back hell, karena kita bisa menambahkan fungsi di dalam fungsi di dalam fungsi
+// // requestPromise('google.com').then((response)=> { // then untuk handle success
+// //     console.log('success', response)
+// // }).catch((error) => { // catch untuk menangkap nilai error
+// //     console.log('error', error)
+// // })
+
+// // cara yang benar menggunakan promise agar tidak berpotensi call back hell, dengan hanya menambahkan callback di setelahnya, dan hanya membutuhkan satu handle error.
+
+// requestPromise('movie.com')
+// .then((result) => {
+//     console.log('page 1')
+//     console.log(result)
+//     return requestPromise('movie.com')
+// }) 
+// .then(()=> {
+//     console.log('page 2')
+//     return requestPromise('movie.com')
+// })
+// .then(()=> {
+//     console.log('page 3')
+//     return requestPromise('movie.com')
+// })
+// .catch((err) => {
+//     console.log(err)
+// })
+
+
+// // async function requestHandler() {
+// // 	try {
+// // 		let result = await requestPromise('movie.com');
+// // 		console.log(result);
+// // 	} catch (error) {
+// // 		console.log('Pesan Error', error);
+// // 	}
+// // }
+
+// // const contohPromise = () => {
+// // 	return new Promise ((resolve, reject) => {
+// // 		resolve(() => {
+// // 			'berhasil';
+// // 		});
+// // 		// reject(() => {
+// // 		// 	'gagal';
+// // 		// });
+// // 	});
+// // };
+
+// // console.log(contohPromise())
+
+
+// const delayedColorChange = (color, delay) => {
+// 	return new Promise((resolve, reject) => {
+		
+// 		setTimeout(() => {
+// 			document.body.style.backgroundColor = color	
+// 			resolve()
+// 		}, delay)
+// 	});
+// };
+
+// // delayedColorChange('red', 1000)
+// // 	.then(() => delayedColorChange('yellow', 1000))
+// // 	.then(() => delayedColorChange('pink', 1000))
+// // 	.then(() => delayedColorChange('tomato', 1000))
+// // 	.then(() => delayedColorChange('brown', 1000))
+// // 	.then(() => delayedColorChange('blue', 1000))
+// // 	.then(() => delayedColorChange('green', 1000))
+
+
+// // ASYNC
+// // function yang di berikan async sebelum function maka otomatis akan menjadi sebuah promise
+// const Hello = async () => {
+	
+// 	throw 'Maaf Gak Kenal'
+// 	// return 'Hello World';
+// }
+
+// // jika menjadi promise, maka kita dapat menambahkan then untuk melanjutkan ke proses atau response selanjutnnya
+// // Kalo funsginya punya data, maka resolve-nya akan mengirimkan data juga yang bisa diolah
+// Hello().then((res) => { //then untuk handle resolve
+// 	console.log('response: ', res)
+// }).catch((err) => { //catch untuk handle throw berupa error
+// 	console.log('error', err)
+// })
+
+// // kalo di dalam func ada object throw errow, makam akan menjalankan bagian reject.
+
+// // AWAIT
+
+// //keyword await hanya bisa digunakan di dalam function dengan 'async'
+
+// //await akan melakukan jeda proses selanjutnya didalam func yang kita panggil, untuk menunggu promise yang dijalankan resolved
+
+
+// async function changeColor() {
+// 	await delayedColorChange('red', 1000);
+// 	await delayedColorChange('yellow', 1000);
+// 	await delayedColorChange('green', 1000);
+// 	await delayedColorChange('blue', 1000);
+// 	await delayedColorChange('purple', 1000);
+// 	await delayedColorChange('orange', 1000);
+// 	await delayedColorChange('black', 1000);
+// 	return 'All Done!';
+// }
+
+// changeColor().then((res) => alert(res))
+
+// async function printRainbow() {
+// 	await changeColor();
+// 	console.log('All Done! Dari printRainbow');
+// }
+
+// printRainbow();
+
+// handle err dengan async await
+
 // Promise version
 const requestPromise = (url) => {
 	return new Promise((resolve, reject) => {
@@ -108,41 +241,14 @@ const requestPromise = (url) => {
 	});
 };
 
-console.log(requestPromise('google.com'))
+async function requestHandler() {
+	// penggunaan try untuk handling resolve dan catch untuk handling error
+	try {
+		let result = await requestPromise('movie.com');
+		console.log(result);
+	} catch (error) {
+		console.log('Pesan Error', error);
+	}
+}
 
-// ini masih bisa berpotensi call back hell, karena kita bisa menambahkan fungsi di dalam fungsi di dalam fungsi
-// requestPromise('google.com').then((response)=> { // then untuk handle success
-//     console.log('success', response)
-// }).catch((error) => { // catch untuk menangkap nilai error
-//     console.log('error', error)
-// })
-
-// cara yang benar menggunakan promise agar tidak berpotensi call back hell, dengan hanya menambahkan callback di setelahnya, dan hanya membutuhkan satu handle error.
-
-requestPromise('movie.com')
-.then((result) => {
-    console.log('page 1')
-    console.log(result)
-    return requestPromise('movie.com')
-}) 
-.then(()=> {
-    console.log('page 2')
-    return requestPromise('movie.com')
-})
-.then(()=> {
-    console.log('page 3')
-    return requestPromise('movie.com')
-})
-.catch((err) => {
-    console.log(err)
-})
-
-
-// async function requestHandler() {
-// 	try {
-// 		let result = await requestPromise('movie.com');
-// 		console.log(result);
-// 	} catch (error) {
-// 		console.log('Pesan Error', error);
-// 	}
-// }
+console.log(requestHandler())

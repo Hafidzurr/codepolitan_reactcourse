@@ -1,0 +1,12 @@
+Request : ajax(async js and xml) fitur untuk js dapat melakukan req diluar dari user mengetikan sesuatu atau menginputkan sesuatu. Request ini berjalan disisi programming, bukan disisi pengguna. 
+
+Req data yang kita butuhkan saja dan biasanya dalam format json.
+
+Bedanya dengan req disisi user adalah bentuk data yang diberikan dan di req 
+XMLHTTP
+FETCH
+AXIOS
+
+API : Application Programming Interface
+
+WEB API : 
