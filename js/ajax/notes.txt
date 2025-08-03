@@ -7,6 +7,55 @@ XMLHTTP
 FETCH
 AXIOS
 
-API : Application Programming Interface
+API : Application Programming Interface, aturan yang memungkinkan dua aplikasi atau dua sistem software saling bekomunikasi dan bertukar data.
 
-WEB API : 
+WEB API : API yang dirancang untuk berinteraksi dengan aplikasi web melalui protokol HTTP atau HTTPS. atau sebuah aturan web yang memungkinkan aplikasi web, perangkat lunak, dan layanan untuk saling berkomunikasi dan bertukar data melalui internet.
+
+json, js object  notation, aturan penulisannya mirip dengan js namun spesifict menggunakan double quote dan tidak menerima nilai undifined
+
+Untuk mengakses json pada js, kita dapat menggunakan JSON.parse
+
+JSON.parse memungkinkan mengubah object json menjadi object javascript.
+
+Sedangkan object js ke object json, biasanya digunakan untuk keperluan perpindahan data ke server, karena server hanya dapat menerima object json.
+
+JSON.stringify() memungkinkan object js diubah menjadi object json
+
+Postman, digunakan untuk req ke API
+
+
+HTTP VERB
+GET : Mendapatkan data 
+POST : Untuk mengirimkan data
+PATCAH : Untuk mengupdate atau mengubah sebagian dari data atau data tertentu yang ingin diubah
+PUT : Untuk mengupdate data secara keseluruhan  
+DELETE : Untuk menghapus data 
+
+status response HTTP 
+
+200 OK = successfull response
+300 = redirection response, response typo terhadap input
+404 = not found atau client error response
+500  = error pada internal server
+
+Base url
+
+https://catfact.ninja/breeds/:id(parameter)
+
+https://catfact.ninja/breeds?limit=1&query=100(query string)
+
+Data HTTP HEADER
+
+KEY
+VALUE
+DESCRIPTION
+
+Request Dengan Xmlhttprequest
+
+fungsi original untuk mengirim req via js
+tidak mendukung promise, kemungkinan kita bakal dpt hell callback
+
+Request Dengan FETCH
+cara baru melakukan req via javascript
+mendukung promise 
+tidak mendukung di internet explorer
