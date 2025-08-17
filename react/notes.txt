@@ -1,0 +1,9 @@
+reactjs adalah library js yang digunakan untuk web dan membuat user interface.
+
+cdn import to html
+
+CRA(create react app) vs vite
+
+CRA memiliki proses instalasi yang lebih panjang di bandingkan dengan vite 2 menit : 30 detik
+
+
